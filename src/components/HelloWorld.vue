@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button v-on:click="showAlert"> Show alert</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -38,6 +39,11 @@ export default {
   props: {
     msg: String
   },
+  methods:{
+    showAlert(){
+      alert('testing')
+    }
+  }
  
 }
 </script>
