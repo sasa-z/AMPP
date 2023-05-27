@@ -3,6 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Abouta</router-link>
   </nav>
+  <button>Button</button>
   <router-view/>
 </template>
 
