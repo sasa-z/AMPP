@@ -35,7 +35,7 @@ export default {
 },
 async fetchAzure() {
   try {
-    const response = await fetch('/ampp-api/ListUsers');
+    const response = await fetch('/api/ListUsers');
     const jokes = await response.json();
     console.log(jokes)
     
