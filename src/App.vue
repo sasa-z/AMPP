@@ -19,7 +19,7 @@ export default {
 
     async fetchJokes() {
   try {
-    const response = await fetch('https://dummyjson.com/products/1');
+    const response = await fetch('https://dummyjson.com/products/');
     const jokes = await response.json();
     console.log(jokes)
   } catch (error) {
