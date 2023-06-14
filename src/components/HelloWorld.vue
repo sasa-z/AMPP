@@ -41,7 +41,7 @@ export default {
   },
   methods:{
     showAlert(){
-      alert('testing')
+     console.log('Button clicked')
     }
   }
  
