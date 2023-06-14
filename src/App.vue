@@ -6,13 +6,18 @@
   <h1>What is going on?</h1>
   <button @click="fetchJokes">Main button</button>
   <router-view/>
+  <ul>
+    <li v-for="item in fetch" :key="item">
+    {{ item }}
+    </li>
+  </ul>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      fetch: ''
+      fetch: []
     }
   },
   methods: {
@@ -22,6 +27,7 @@ export default {
     const response = await fetch('https://dummyjson.com/products/');
     const jokes = await response.json();
     console.log(jokes)
+    this.fetch = jokes
   } catch (error) {
     console.error(error);
   }
