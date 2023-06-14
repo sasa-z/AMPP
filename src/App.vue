@@ -14,7 +14,7 @@ export default {
        
     },
     mounted(){
-      alert('Mounted alert')
+      console.log('Mounted alert')
 
   }
 }
