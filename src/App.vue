@@ -11,8 +11,7 @@
 <script>
 export default {
   methods: {
-
-   
+       
     },
     mounted(){
       alert('Mounted alert')
