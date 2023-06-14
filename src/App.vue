@@ -4,17 +4,33 @@
     <router-link to="/about">About</router-link>
   </nav>
   <h1>What is going on?</h1>
-  <button>Button</button>
+  <button @click="fetchJokes">Main button</button>
   <router-view/>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      fetch: ''
+    }
+  },
   methods: {
+
+    async fetchJokes() {
+  try {
+    const response = await fetch('https://jokes-api-by-api-ninja.p.rapidapi.com/v1/jokes');
+    const jokes = await response.json();
+    console.log(jokes)
+  } catch (error) {
+    console.error(error);
+  }
+}
        
     },
     mounted(){
       console.log('Mounted alert')
+      
 
   }
 }
