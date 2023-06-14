@@ -8,7 +8,7 @@
   <router-view/>
   <ul>
     <li v-for="item in fetch" :key="item">
-    {{ item }}
+    {{ item.brand }} -  {{ item.category }} -  {{ item.title }}
     </li>
   </ul>
 </template>
