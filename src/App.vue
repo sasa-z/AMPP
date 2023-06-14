@@ -8,6 +8,19 @@
   <router-view/>
 </template>
 
+<script>
+export default {
+  methods: {
+
+    mounted(){
+      alert('Mounted alert')
+    }
+
+  }
+}
+
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
