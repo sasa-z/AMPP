@@ -5,6 +5,7 @@
   </nav>
   <h1>What is going on?</h1>
   <button @click="fetchJokes">Main button</button>
+  <button @click="fetchAzure">Main button</button>
   <router-view/>
   <ul>
     <li v-for="item in fetch" :key="item">
@@ -28,6 +29,16 @@ export default {
     const jokes = await response.json();
     console.log(jokes)
     this.fetch = jokes
+  } catch (error) {
+    console.error(error);
+  }
+},
+async fetchAzure() {
+  try {
+    const response = await fetch('/ampp-api/listUsers');
+    const jokes = await response.json();
+    console.log(jokes)
+    
   } catch (error) {
     console.error(error);
   }
