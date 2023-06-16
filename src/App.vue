@@ -35,7 +35,7 @@ export default {
 },
 async fetchAzure() {
   try {
-    const response = await fetch('https://testywapp.azurewebsites.net/api/ListUsers?');
+    const response = await fetch('https://github.com/sasa-z/AMPP-API/tree/main/ListUsers');
     const jokes = await response.json();
     console.log(jokes)
     
