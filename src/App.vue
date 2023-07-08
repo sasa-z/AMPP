@@ -5,7 +5,7 @@
   </nav>
   <h1>What is going on?</h1>
   <button @click="fetchJokes">Main button</button>
-  <button @click="fetchAzure">Azure fetch</button>
+  <button @click="fetchAzure">O365 fetch</button>
   <router-view/>
   <ul>
     <li v-for="item in fetch" :key="item">
