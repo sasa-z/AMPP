@@ -3,48 +3,59 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
-  <h1>What is going on?</h1>
-  <button @click="fetchJokes">Main button</button>
-  <button @click="fetchAzure">O365 fetch</button>
-  <router-view/>
-  <ul>
-    <li v-for="item in fetch" :key="item">
-    {{ item.brand }} -  {{ item.category }} -  {{ item.title }}
-    </li>
-  </ul>
+  <h1>Vue form</h1>
+  <the-form
+  
+  />
+
+
+
 </template>
 
 <script>
+import TheForm from '@/views/TheForm.vue';
+
 export default {
+  components: {
+    TheForm,
+  },
   data() {
     return {
-      fetch: []
+        counterTitle: "Counter Title",
+        amount: 0,
+        incrementAmount: 1
+
     }
   },
   methods: {
+    incrementNumber () {
+      this.amount += this.incrementAmount
+    },
+    reset(){
+      this.amount =  0
+    },
 
-    async fetchJokes() {
-  try {
-    const response = await fetch('https://dummyjson.com/products/');
-    const jokes = await response.json();
-    console.log(jokes)
-    this.fetch = jokes
-  } catch (error) {
-    console.error(error);
+    },
+
+    computed: {
+      showMessage () {
+        if (this.amount > 20 ){
+          return "More than 20"
+        }else{
+          return ""
+        }
+      }
+   
+    },
+
+watch: {
+  amount(newValue){
+    if (newValue > 20){
+      alert("Value is greater than 20")
+    }
   }
 },
-async fetchAzure() {
-  try {
-    const response = await fetch('https://github.com/sasa-z/AMPP-API/tree/main/ListUsers');
-    const jokes = await response.json();
-    console.log(jokes)
-    
-  } catch (error) {
-    console.error(error);
-  }
-}
-       
-    },
+
     mounted(){
       console.log('Mounted alert')
       
